@@ -209,3 +209,49 @@ This approach seems to utilize a lot of space since it is a 2-D array solution. 
 
 Update:
 Checking the knapsack algorithm online, the website GeeksForGeeks has a few alternative solutions available in which Time complexity is still O(Money \*N), but the space complexity is down to O(2\*Money)
+
+### Citations
+I have utilized the 0-1Knapsack Dataset creator `generatorExecutable` from the Github Repository of JorikJooken to create 6 different knapsack sets. This Github repository contains several 
+
+Reference.[KnapSack Problem Instances Github page](https://github.com/JorikJooken/knapsackProblemInstances)
+
+The 6 problem sets that I have created are as follows:
+
+Set 1
+n = 10
+W = 100
+
+Set 2
+n = 25
+W = 200
+
+Set 3
+n = 100
+W = 1000
+
+Set 4
+n = 200
+W = 1500
+
+Set 5
+n = 500
+W = 2000
+
+Set 6
+n = 1000
+W = 3000
+
+The way to use the generator is as follows:
+
+``` bash
+./generatorExecutable < problem_generator.txt > output.txt
+```
+
+I have also utilized the knapsack solver created by Google as part of the Optimization packaged called `ortools` to produce the optimal results of the problem sets
+Reference: [Knapsack Optimized Solution](https://developers.google.com/optimization/bin/knapsack)
+
+
+### Reference
+Jooken, J., Leyman, P., & De Causmaecker, P. (2022). A new class of hard problem instances for the 0–1 knapsack
+problem. European Journal of Operational Research, 301, 841–854. 
+Dataset Available Online: https://github.com/JorikJooken/knapsackProblemInstances 
