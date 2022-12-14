@@ -20,7 +20,7 @@ def money_brute_force_solution(Proposals, Money):
             output_quality = quality
     import os
     import psutil
-    print("\tThis is how much MiB Brute Force is taking: ",
+    print("\t\tThis is how much MiB Brute Force is taking: ",
           psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2)
     return output_quality
 

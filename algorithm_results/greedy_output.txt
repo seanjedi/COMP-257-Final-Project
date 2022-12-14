@@ -1,0 +1,144 @@
+Getting Results for: problem_set10
+    The size of the sample is: 10
+    The available money is:100
+    The Optimal Quality is:128
+	Taking the time of: money_greedy_solution
+		The Output Quality is:127
+		--- 1.5974044799804688e-05 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:127
+		--- 5.0067901611328125e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:127
+		--- 3.5762786865234375e-06 seconds ---
+
+Getting Results for: problem_set15
+    The size of the sample is: 15
+    The available money is:150
+    The Optimal Quality is:169
+	Taking the time of: money_greedy_solution
+		The Output Quality is:169
+		--- 6.67572021484375e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:169
+		--- 4.5299530029296875e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:169
+		--- 4.5299530029296875e-06 seconds ---
+
+Getting Results for: problem_set20
+    The size of the sample is: 20
+    The available money is:200
+    The Optimal Quality is:246
+	Taking the time of: money_greedy_solution
+		The Output Quality is:244
+		--- 7.3909759521484375e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:244
+		--- 5.9604644775390625e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:244
+		--- 5.7220458984375e-06 seconds ---
+
+Getting Results for: problem_set25
+    The size of the sample is: 25
+    The available money is:200
+    The Optimal Quality is:216
+	Taking the time of: money_greedy_solution
+		The Output Quality is:211
+		--- 8.344650268554688e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:211
+		--- 6.67572021484375e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:211
+		--- 6.4373016357421875e-06 seconds ---
+
+Getting Results for: problem_set30
+    The size of the sample is: 30
+    The available money is:300
+    The Optimal Quality is:331
+	Taking the time of: money_greedy_solution
+		The Output Quality is:331
+		--- 9.5367431640625e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:331
+		--- 8.106231689453125e-06 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:331
+		--- 8.106231689453125e-06 seconds ---
+
+Getting Results for: problem_set50
+    The size of the sample is: 100
+    The available money is:1000
+    The Optimal Quality is:977
+	Taking the time of: money_greedy_solution
+		The Output Quality is:976
+		--- 3.147125244140625e-05 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:976
+		--- 3.0040740966796875e-05 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:976
+		--- 2.7179718017578125e-05 seconds ---
+
+Getting Results for: problem_set200
+    The size of the sample is: 200
+    The available money is:1500
+    The Optimal Quality is:1704
+	Taking the time of: money_greedy_solution
+		The Output Quality is:1701
+		--- 6.318092346191406e-05 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:1701
+		--- 5.173683166503906e-05 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:1701
+		--- 4.9591064453125e-05 seconds ---
+
+Getting Results for: problem_set500
+    The size of the sample is: 500
+    The available money is:2000
+    The Optimal Quality is:2820
+	Taking the time of: money_greedy_solution
+		The Output Quality is:2648
+		--- 0.00015115737915039062 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:2648
+		--- 0.00013399124145507812 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:2648
+		--- 0.0001289844512939453 seconds ---
+
+Getting Results for: problem_set1000
+    The size of the sample is: 1000
+    The available money is:2000
+    The Optimal Quality is:3504
+	Taking the time of: money_greedy_solution
+		The Output Quality is:2435
+		--- 0.00028014183044433594 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:2435
+		--- 0.0002589225769042969 seconds ---
+
+	Taking the time of: money_greedy_solution
+		The Output Quality is:2435
+		--- 0.00025200843811035156 seconds ---
+

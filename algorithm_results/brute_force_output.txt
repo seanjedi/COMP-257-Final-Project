@@ -3,130 +3,97 @@ Getting Results for: problem_set10
     The available money is:100
     The Optimal Quality is:128
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.0005102157592773438 seconds ---
+		This is how much MiB Brute Force is taking:  113.98828125
+		The Output Quality is:128
+		--- 0.007352352142333984 seconds ---
 
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.0003266334533691406 seconds ---
+		This is how much MiB Brute Force is taking:  113.98828125
+		The Output Quality is:128
+		--- 0.0004730224609375 seconds ---
 
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.0003490447998046875 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.00039005279541015625 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.000347137451171875 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.000339508056640625 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.00033545494079589844 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.0003223419189453125 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.00037217140197753906 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:128
-	--- 0.0003333091735839844 seconds ---
+		This is how much MiB Brute Force is taking:  113.98828125
+		The Output Quality is:128
+		--- 0.00037360191345214844 seconds ---
 
 Getting Results for: problem_set15
     The size of the sample is: 15
     The available money is:150
     The Optimal Quality is:169
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.057102203369140625 seconds ---
+		This is how much MiB Brute Force is taking:  117.5234375
+		The Output Quality is:169
+		--- 0.05144381523132324 seconds ---
 
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.017956972122192383 seconds ---
+		This is how much MiB Brute Force is taking:  117.5234375
+		The Output Quality is:169
+		--- 0.019345760345458984 seconds ---
 
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.017242431640625 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.017209529876708984 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.01683664321899414 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.03289461135864258 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.01668238639831543 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.016690492630004883 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.01659536361694336 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:169
-	--- 0.016506433486938477 seconds ---
+		This is how much MiB Brute Force is taking:  117.51171875
+		The Output Quality is:169
+		--- 0.019226551055908203 seconds ---
 
 Getting Results for: problem_set20
     The size of the sample is: 20
     The available money is:200
     The Optimal Quality is:246
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.1794865131378174 seconds ---
+		This is how much MiB Brute Force is taking:  249.1015625
+		The Output Quality is:246
+		--- 1.4547429084777832 seconds ---
 
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.145409107208252 seconds ---
+		This is how much MiB Brute Force is taking:  249.921875
+		The Output Quality is:246
+		--- 1.4311587810516357 seconds ---
 
 	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.2616112232208252 seconds ---
+		This is how much MiB Brute Force is taking:  250.03515625
+		The Output Quality is:246
+		--- 1.2444891929626465 seconds ---
 
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.2472145557403564 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.178940773010254 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.2032887935638428 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.1997225284576416 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.20355224609375 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.193812608718872 seconds ---
-
-	Taking the time of: money_brute_force_solution
-	The Output Quality is:246
-	--- 1.2063546180725098 seconds ---
-
+Getting Results for: problem_set25
+    The size of the sample is: 25
+    The available money is:200
+    The Optimal Quality is:216
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+Getting Results for: problem_set30
+    The size of the sample is: 30
+    The available money is:300
+    The Optimal Quality is:331
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+Getting Results for: problem_set50
+    The size of the sample is: 100
+    The available money is:1000
+    The Optimal Quality is:977
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+Getting Results for: problem_set200
+    The size of the sample is: 200
+    The available money is:1500
+    The Optimal Quality is:1704
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+Getting Results for: problem_set500
+    The size of the sample is: 500
+    The available money is:2000
+    The Optimal Quality is:2820
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+Getting Results for: problem_set1000
+    The size of the sample is: 1000
+    The available money is:2000
+    The Optimal Quality is:3504
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set
+		Brute Force did not run for this problem set

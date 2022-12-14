@@ -17,7 +17,8 @@ from problems_set.problem_set1000 import problem_set1000
 
 VALID_CHOICES = ["1", "2", "3", "4", "q", ""]
 VALID_ALGORITHMS_BRUTE_FORCE = [problem_set10, problem_set15, problem_set20]
-VALID_ALGORITHMS_GREEDY = [problem_set10]
+VALID_ALGORITHMS_GREEDY = [problem_set10, problem_set15, problem_set20, problem_set25,
+                           problem_set30, problem_set50, problem_set200, problem_set500, problem_set1000]
 VALID_ALGORITHMS_DP = [problem_set10]
 
 
@@ -100,21 +101,21 @@ class Solution:
             self.results["brute_force_time"].append(
                 self.function_timer(money_brute_force_solution))
         else:
-            print("\tBrute Force did not run for this problem set")
+            print("\t\tBrute Force did not run for this problem set")
             self.results["brute_force_time"].append(0)
         # Get greedy algorithm times
         if problem_set in VALID_ALGORITHMS_GREEDY:
             self.results["greedy_time"].append(
                 self.function_timer(money_greedy_solution))
         else:
-            print("\tGreedy Algorithm did not run for this problem set")
+            print("\t\tGreedy Algorithm did not run for this problem set")
             self.results["greedy_time"].append(0)
         # Get Dynamic Programming algorithm times
         if problem_set in VALID_ALGORITHMS_DP:
             self.results["dynamic_time"].append(
                 self.function_timer(dyanmic_programming_algorithm_approach))
         else:
-            print("\tDynamic Programming Algorithm did not run for this problem set")
+            print("\t\tDynamic Programming Algorithm did not run for this problem set")
             self.results["dynamic_time"].append(0)
         self.results["set_size"].append(
             self.problem_data.get("SET_SIZE"))
@@ -126,31 +127,32 @@ class Solution:
                     self.function_timer(self.running_algorithm))
                 self.results["set_size"].append(
                     self.problem_data.get("SET_SIZE"))
+            else:
+                print("\t\tBrute Force did not run for this problem set")
         elif self.running_algorithm == money_greedy_solution:
             if problem_set in VALID_ALGORITHMS_GREEDY:
                 self.results[self.algorithm_choice_name[1]].append(
                     self.function_timer(self.running_algorithm))
                 self.results["set_size"].append(
                     self.problem_data.get("SET_SIZE"))
+            else:
+                print("\t\tGreedy Algorithm did not run for this problem set")
         elif self.running_algorithm == dyanmic_programming_algorithm_approach:
             if problem_set in VALID_ALGORITHMS_DP:
                 self.results[self.algorithm_choice_name[1]].append(
                     self.function_timer(self.running_algorithm))
                 self.results["set_size"].append(
                     self.problem_data.get("SET_SIZE"))
-        else:
-            self.results[self.algorithm_choice_name[1]].append(
-                self.function_timer(self.running_algorithm))
-            self.results["set_size"].append(
-                self.problem_data.get("SET_SIZE"))
+            else:
+                print("\tDynamic Programming Algorithm did not run for this problem set")
 
     def function_timer(self, func):
         print(f"\tTaking the time of: {func.__name__}")
         start_time = time.time()
         solution_quality = func(self.problem_data.get(
             "PROPOSAL"), self.problem_data.get("AVAILABLE_MONEY"))
-        print(f"\tThe Output Quality is:{solution_quality}")
-        print(f"\t--- {time.time() - start_time} seconds ---\n")
+        print(f"\t\tThe Output Quality is:{solution_quality}")
+        print(f"\t\t--- {time.time() - start_time} seconds ---\n")
         return time.time() - start_time
 
     def plot_results(self):
@@ -167,7 +169,7 @@ class Solution:
                      label="DP algorithm time", linestyle="dashed")
         else:
             plt.plot(dataframe.set_size, dataframe.get(
-                self.algorithm_choice_name[1]), label="{self.algorithm_choice_name[0]} time")
+                self.algorithm_choice_name[1]), label=f"{self.algorithm_choice_name[0]} time")
         plt.legend()
         # Providing x and y label to the chart
         plt.xlabel('set size (n)')

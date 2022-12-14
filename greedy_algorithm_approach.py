@@ -1,16 +1,16 @@
 
-def money_greedy_solution(Proposals, Money):
-    return 1
+def money_greedy_solution(proposals, Money):
     # In the final code, I will implement this by utilizing two mergesorts, hence this would be O(2logN)
-    Proposals = sorted(sorted(
-        Proposals, key=lambda x: x["cost"]), key=lambda x: x["quality"], reverse=True)
+    proposals = sorted(sorted(
+        proposals, key=lambda x: x["cost"]), key=lambda x: x["quality"], reverse=True)
     i = 0
-    OQuality = 0
-    OSubset = []
-    while (Money > 0 and i < len(Proposals)):
-        if (Money > Proposals[i]["cost"]) and (Proposals[i]["quality"] > 0):
-            OQuality += Proposals[i]["quality"]
-            OSubset.append(Proposals[i])
-            Money -= Proposals[i]["cost"]
+    output_quality = 0
+    output_subset = []
+    while (Money > 0 and i < len(proposals)):
+        if (Money > proposals[i]["cost"]) and (proposals[i]["quality"] > 0):
+            output_quality += proposals[i]["quality"]
+            output_subset.append(proposals[i])
+            Money -= proposals[i]["cost"]
         i += 1
-    return OSubset, OQuality
+    # return output_subset, output_quality
+    return output_quality
