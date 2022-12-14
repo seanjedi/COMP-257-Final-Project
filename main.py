@@ -16,6 +16,9 @@ from problems_set.problem_set500 import problem_set500
 from problems_set.problem_set1000 import problem_set1000
 
 VALID_CHOICES = ["1", "2", "3", "4", "q", ""]
+VALID_ALGORITHMS_BRUTE_FORCE = [problem_set10, problem_set15, problem_set20]
+VALID_ALGORITHMS_GREEDY = [problem_set10]
+VALID_ALGORITHMS_DP = [problem_set10]
 
 
 class Solution:
@@ -53,6 +56,7 @@ class Solution:
             self.results = {"dynamic_time": [], "set_size": []}
             self.running_algorithm = dyanmic_programming_algorithm_approach
         elif self.algorithm_choice == "4" or self.algorithm_choice == "":
+            self.algorithm_choice = "4"
             self.results = {"greedy_time": [], "brute_force_time": [
             ], "dynamic_time": [], "set_size": []}
         else:
@@ -62,10 +66,83 @@ class Solution:
         if self.runs == "":
             self.runs = 1
 
+    def test_runner(self):
+        self.run_tests(problem_set10)
+        self.run_tests(problem_set15)
+        self.run_tests(problem_set20)
+        self.run_tests(problem_set25)
+        self.run_tests(problem_set30)
+        self.run_tests(problem_set50)
+        self.run_tests(problem_set200)
+        self.run_tests(problem_set500)
+        self.run_tests(problem_set1000)
+        self.plot_results()
+
     def run_tests(self, problem_set):
         self.problem_data = problem_set()
         self.helper_func(problem_set)
         self.set_count += 1
+
+    def helper_func(self, problem_set):
+        print(f"Getting Results for: {problem_set.__name__}")
+        print("    The size of the sample is: {}"
+              "\n    The available money is:{}"
+              "\n    The Optimal Quality is:{}".format(self.problem_data.get('SET_SIZE'), self.problem_data.get("AVAILABLE_MONEY"), self.problem_data.get("OPTIMAL_QUALITY")))
+        for i in range(int(self.runs)):
+            if self.algorithm_choice == "4":
+                self.collect_results_all(problem_set)
+            else:
+                self.collect_results_one(problem_set)
+
+    def collect_results_all(self, problem_set):
+        # Get Brute Force algorithm times
+        if problem_set in VALID_ALGORITHMS_BRUTE_FORCE:
+            self.results["brute_force_time"].append(
+                self.function_timer(money_brute_force_solution))
+        else:
+            print("\tBrute Force did not run for this problem set")
+            self.results["brute_force_time"].append(0)
+        # Get greedy algorithm times
+        if problem_set in VALID_ALGORITHMS_GREEDY:
+            self.results["greedy_time"].append(
+                self.function_timer(money_greedy_solution))
+        else:
+            print("\tGreedy Algorithm did not run for this problem set")
+            self.results["greedy_time"].append(0)
+        # Get Dynamic Programming algorithm times
+        if problem_set in VALID_ALGORITHMS_DP:
+            self.results["dynamic_time"].append(
+                self.function_timer(dyanmic_programming_algorithm_approach))
+        else:
+            print("\tDynamic Programming Algorithm did not run for this problem set")
+            self.results["dynamic_time"].append(0)
+        self.results["set_size"].append(
+            self.problem_data.get("SET_SIZE"))
+
+    def collect_results_one(self, problem_set):
+        if self.running_algorithm == money_brute_force_solution:
+            if problem_set in VALID_ALGORITHMS_BRUTE_FORCE:
+                self.results[self.algorithm_choice_name[1]].append(
+                    self.function_timer(self.running_algorithm))
+                self.results["set_size"].append(
+                    self.problem_data.get("SET_SIZE"))
+        elif self.running_algorithm == money_greedy_solution:
+            if problem_set in VALID_ALGORITHMS_GREEDY:
+                self.results[self.algorithm_choice_name[1]].append(
+                    self.function_timer(self.running_algorithm))
+                self.results["set_size"].append(
+                    self.problem_data.get("SET_SIZE"))
+        elif self.running_algorithm == dyanmic_programming_algorithm_approach:
+            if problem_set in VALID_ALGORITHMS_DP:
+                self.results[self.algorithm_choice_name[1]].append(
+                    self.function_timer(self.running_algorithm))
+                self.results["set_size"].append(
+                    self.problem_data.get("SET_SIZE"))
+        else:
+            self.results[self.algorithm_choice_name[1]].append(
+                self.function_timer(self.running_algorithm))
+            self.results["set_size"].append(
+                self.problem_data.get("SET_SIZE"))
 
     def function_timer(self, func):
         print(f"\tTaking the time of: {func.__name__}")
@@ -75,24 +152,6 @@ class Solution:
         print(f"\tThe Output Quality is:{solution_quality}")
         print(f"\t--- {time.time() - start_time} seconds ---\n")
         return time.time() - start_time
-
-    def helper_func(self, problem_set):
-        print(f"Getting Results for: {problem_set.__name__}")
-        print("    The size of the sample is: {}"
-              "\n    The available money is:{}"
-              "\n    The Optimal Quality is:{}".format(self.problem_data.get('SET_SIZE'), self.problem_data.get("AVAILABLE_MONEY"), self.problem_data.get("OPTIMAL_QUALITY")))
-        for i in range(int(self.runs)):
-            if self.algorithm_choice == "4":
-                self.results["brute_force_time"].append(
-                    self.function_timer(money_brute_force_solution))
-                self.results["greedy_time"].append(
-                    self.function_timer(money_greedy_solution))
-                self.results["dynamic_time"].append(
-                    self.function_timer(dyanmic_programming_algorithm_approach))
-            else:
-                self.results[self.algorithm_choice_name[1]].append(
-                    self.function_timer(self.running_algorithm))
-            self.results["set_size"].append(self.problem_data.get("SET_SIZE"))
 
     def plot_results(self):
         dataframe = pd.DataFrame(self.results)
@@ -119,19 +178,9 @@ class Solution:
 def main():
     # Create the test runner class
     runner = Solution()
-
     # # Get the algorithm that we want to run
     runner.get_input()
-
-    runner.run_tests(problem_set10)
-    runner.run_tests(problem_set15)
-    runner.run_tests(problem_set20)
-    # runner.run_tests(problem_set25)
-    # runner.run_tests(problem_set50)
-    # runner.run_tests(problem_set200)
-    # runner.run_tests(problem_set500)
-    # runner.run_tests(problem_set1000)
-    runner.plot_results()
+    runner.test_runner()
 
 
 if __name__ == "__main__":
