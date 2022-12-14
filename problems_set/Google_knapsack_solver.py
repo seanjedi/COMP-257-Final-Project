@@ -1,10 +1,10 @@
 from ortools.algorithms import pywrapknapsack_solver
-from problem_set1 import problem_set1
-from problem_set2 import problem_set2
-from problem_set3 import problem_set3
-from problem_set4 import problem_set4
-from problem_set5 import problem_set5
-from problem_set6 import problem_set6
+from problems_set.problem_set10 import problem_set10
+from problems_set.problem_set25 import problem_set25
+from problems_set.problem_set50 import problem_set50
+from problems_set.problem_set200 import problem_set200
+from problems_set.problem_set500 import problem_set500
+from problems_set.problem_set1000 import problem_set1000
 
 
 def main(values, weights, capacities):
@@ -50,10 +50,10 @@ def helper(p_set):
     main(values, weights, capacities)
 
 if __name__ == '__main__':
-    helper(problem_set1)
-    helper(problem_set2)
-    helper(problem_set3)
-    helper(problem_set4)
-    helper(problem_set5)
-    helper(problem_set6)
+    helper(problem_set10)
+    helper(problem_set25)
+    helper(problem_set50)
+    helper(problem_set200)
+    helper(problem_set500)
+    helper(problem_set1000)
     

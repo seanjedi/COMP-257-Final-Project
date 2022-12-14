@@ -1,4 +1,4 @@
-def problem_set2():
+def problem_set25():
     problem_set = {
         "PROPOSAL": [
             {"cost":110, "quality":107},

@@ -5,12 +5,12 @@ import matplotlib.pyplot as plt
 from greedy_algorithm_approach import money_greedy_solution
 from brute_force_approach import money_brute_force_solution
 from dynamic_programming_approach import dyanmic_programming_algorithm_approach
-from problems_set.problem_set1 import problem_set1
-from problems_set.problem_set2 import problem_set2
-from problems_set.problem_set3 import problem_set3
-from problems_set.problem_set4 import problem_set4
-from problems_set.problem_set5 import problem_set5
-from problems_set.problem_set6 import problem_set6
+from problems_set.problem_set10 import problem_set10
+from problems_set.problem_set25 import problem_set25
+from problems_set.problem_set50 import problem_set50
+from problems_set.problem_set200 import problem_set200
+from problems_set.problem_set500 import problem_set500
+from problems_set.problem_set1000 import problem_set1000
 
 VALID_CHOICES = ["1","2","3","4","q"]
 class Solution:
@@ -100,22 +100,22 @@ def main():
     runner.get_input()
 
     # # Get the results of set 1
-    runner.run_tests(problem_set1)
+    runner.run_tests(problem_set10)
 
     # # Get the results of set 2
-    runner.run_tests(problem_set2)
+    runner.run_tests(problem_set25)
     
     # # Get the results of set 3
-    # runner.run_tests(problem_set3)
+    # runner.run_tests(problem_set50)
     
     # # Get the results of set 4
-    # runner.run_tests(problem_set4)
+    # runner.run_tests(problem_set200)
     
     # # Get the results of set 5
-    # runner.run_tests(problem_set5)
+    # runner.run_tests(problem_set500)
     
     # # Get the results of set 6
-    # runner.run_tests(problem_set6)
+    # runner.run_tests(problem_set1000)
     runner.plot_results()
     
 
