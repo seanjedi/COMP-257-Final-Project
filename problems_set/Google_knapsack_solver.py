@@ -36,14 +36,16 @@ def main(values, weights, capacities):
     print('\tPacked_values:', packed_values)
     print('\n')
 
+
 def get_data(proposals):
     proposed_set = proposals.get("PROPOSAL")
-    values =[] 
+    values = []
     weights = [[]]
     for item in proposed_set:
         weights[0].append(item.get("cost"))
         values.append(item.get("quality"))
     return values, weights
+
 
 def helper(p_set):
     problem_data = p_set()
@@ -51,6 +53,7 @@ def helper(p_set):
     values, weights = get_data(problem_data)
     capacities = [problem_data.get("AVAILABLE_MONEY")]
     main(values, weights, capacities)
+
 
 if __name__ == '__main__':
     helper(problem_set10)
@@ -61,4 +64,4 @@ if __name__ == '__main__':
     helper(problem_set50)
     helper(problem_set200)
     helper(problem_set500)
-    helper(problem_set1000)    
+    helper(problem_set1000)

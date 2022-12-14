@@ -1,14 +1,10 @@
 from itertools import chain, combinations
 
+
 def powerset(iterable):
     s = list(iterable)
     return chain.from_iterable(combinations(s, r) for r in range(1, len(s)+1))
 
-# def powerset_raw(s):
-#     x = len(s)
-#     masks = [1 << i for i in range(x)]
-#     for i in range(1 << x):
-#         yield [ss for mask, ss in zip(masks, s) if i & mask]
 
 def money_brute_force_solution(Proposals, Money):
     subsets = []
@@ -19,13 +15,18 @@ def money_brute_force_solution(Proposals, Money):
         quality = 0
         for grants in subsets[i]:
             sumCost += grants["cost"]
-            quality += grants["quality"] 
+            quality += grants["quality"]
         if sumCost <= Money and quality > output_quality:
             output_quality = quality
     return output_quality
 
 
-
+# Old Code
+# def powerset_raw(s):
+#     x = len(s)
+#     masks = [1 << i for i in range(x)]
+#     for i in range(1 << x):
+#         yield [ss for mask, ss in zip(masks, s) if i & mask]
 
 # def money_brute_force_solution_first_attempt(Proposals, Money):
 #     subsets = []
@@ -54,8 +55,8 @@ def money_brute_force_solution(Proposals, Money):
 #         quality = 0
 #         for grants in subsets[i]:
 #             sumCost += grants["cost"]
-#             quality += grants["quality"] 
+#             quality += grants["quality"]
 #         if sumCost <= Money and quality > output_quality:
 #             output_quality = quality
-    
+
 #     return output_quality
