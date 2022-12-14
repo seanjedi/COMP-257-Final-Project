@@ -1,10 +1,13 @@
 from ortools.algorithms import pywrapknapsack_solver
-from problems_set.problem_set10 import problem_set10
-from problems_set.problem_set25 import problem_set25
-from problems_set.problem_set50 import problem_set50
-from problems_set.problem_set200 import problem_set200
-from problems_set.problem_set500 import problem_set500
-from problems_set.problem_set1000 import problem_set1000
+from problem_set10 import problem_set10
+from problem_set15 import problem_set15
+from problem_set20 import problem_set20
+from problem_set25 import problem_set25
+from problem_set30 import problem_set30
+from problem_set50 import problem_set50
+from problem_set200 import problem_set200
+from problem_set500 import problem_set500
+from problem_set1000 import problem_set1000
 
 
 def main(values, weights, capacities):
@@ -20,14 +23,14 @@ def main(values, weights, capacities):
     packed_weights = []
     packed_values = []
     total_weight = 0
-    print('\tTotal value =', computed_value)
+    print('\tOptimal value =', computed_value)
     for i in range(len(values)):
         if solver.BestSolutionContains(i):
             packed_items.append(i)
             packed_values.append(values[i])
             packed_weights.append(weights[0][i])
             total_weight += weights[0][i]
-    print('\tTotal weight:', total_weight)
+    print('\tOptimal weight:', total_weight)
     print('\tPacked items:', packed_items)
     print('\tPacked_weights:', packed_weights)
     print('\tPacked_values:', packed_values)
@@ -51,9 +54,11 @@ def helper(p_set):
 
 if __name__ == '__main__':
     helper(problem_set10)
+    helper(problem_set15)
+    helper(problem_set20)
     helper(problem_set25)
+    helper(problem_set30)
     helper(problem_set50)
     helper(problem_set200)
     helper(problem_set500)
-    helper(problem_set1000)
-    
+    helper(problem_set1000)    

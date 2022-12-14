@@ -6,13 +6,16 @@ from greedy_algorithm_approach import money_greedy_solution
 from brute_force_approach import money_brute_force_solution
 from dynamic_programming_approach import dyanmic_programming_algorithm_approach
 from problems_set.problem_set10 import problem_set10
+from problems_set.problem_set15 import problem_set15
+from problems_set.problem_set20 import problem_set20
 from problems_set.problem_set25 import problem_set25
+from problems_set.problem_set30 import problem_set30
 from problems_set.problem_set50 import problem_set50
 from problems_set.problem_set200 import problem_set200
 from problems_set.problem_set500 import problem_set500
 from problems_set.problem_set1000 import problem_set1000
 
-VALID_CHOICES = ["1","2","3","4","q"]
+VALID_CHOICES = ["1","2","3","4","q", ""]
 class Solution:
     results = {}
     problem_data = {}
@@ -20,9 +23,10 @@ class Solution:
     algorithm_choice = "4"
     running_algorithm = None
     algorithm_choice_name = None
+    runs = "1"
 
     def get_input(self):
-        self.algorithm_choice = input("Which Algorithm Do you want to use?"
+        self.algorithm_choice = input("Which Algorithm Do you want to use (default: 4)?"
                                 "\n1) Brute Force Algorithm"
                                 "\n2) Greedy Algorithm"
                                 "\n3) Dynamic Programming Algorithm"
@@ -43,10 +47,14 @@ class Solution:
             self.algorithm_choice_name = ("dyanmic_programming_algorithm_approach", "dynamic_time")
             self.results = {"dynamic_time":[], "set_size":[]}        
             self.running_algorithm = dyanmic_programming_algorithm_approach
-        elif self.algorithm_choice == "4":
+        elif self.algorithm_choice == "4" or self.algorithm_choice == "":
             self.results = {"greedy_time":[], "brute_force_time":[], "dynamic_time":[], "set_size":[]}        
         else:
             exit(0)
+        self.runs = input("How many runs do you want (default: 1)?"
+                                "\nChoice: ")
+        if self.runs == "":
+            self.runs = 1
 
     def run_tests(self, problem_set):
         self.problem_data = problem_set()
@@ -66,13 +74,14 @@ class Solution:
         print("    The size of the sample is: {}"
             "\n    The available money is:{}"
             "\n    The Optimal Quality is:{}".format(self.problem_data.get('SET_SIZE'), self.problem_data.get("AVAILABLE_MONEY"), self.problem_data.get("OPTIMAL_QUALITY")))
-        if self.algorithm_choice == "4":
-            self.results["brute_force_time"].append(self.function_timer(money_brute_force_solution))
-            self.results["greedy_time"].append(self.function_timer(money_greedy_solution))
-            self.results["dynamic_time"].append(self.function_timer(dyanmic_programming_algorithm_approach))
-        else:
-            self.results[self.algorithm_choice_name[1]].append(self.function_timer(self.running_algorithm))
-        self.results["set_size"].append(self.problem_data.get("SET_SIZE"))
+        for i in range(int(self.runs)):
+            if self.algorithm_choice == "4":
+                self.results["brute_force_time"].append(self.function_timer(money_brute_force_solution))
+                self.results["greedy_time"].append(self.function_timer(money_greedy_solution))
+                self.results["dynamic_time"].append(self.function_timer(dyanmic_programming_algorithm_approach))
+            else:
+                self.results[self.algorithm_choice_name[1]].append(self.function_timer(self.running_algorithm))
+            self.results["set_size"].append(self.problem_data.get("SET_SIZE"))
 
     def plot_results(self):
         dataframe = pd.DataFrame(self.results)    
@@ -99,22 +108,13 @@ def main():
     # # Get the algorithm that we want to run
     runner.get_input()
 
-    # # Get the results of set 1
     runner.run_tests(problem_set10)
-
-    # # Get the results of set 2
-    runner.run_tests(problem_set25)
-    
-    # # Get the results of set 3
+    runner.run_tests(problem_set15)
+    runner.run_tests(problem_set20)
+    # runner.run_tests(problem_set25)
     # runner.run_tests(problem_set50)
-    
-    # # Get the results of set 4
     # runner.run_tests(problem_set200)
-    
-    # # Get the results of set 5
     # runner.run_tests(problem_set500)
-    
-    # # Get the results of set 6
     # runner.run_tests(problem_set1000)
     runner.plot_results()
     
