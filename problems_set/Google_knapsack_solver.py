@@ -1,10 +1,10 @@
 from ortools.algorithms import pywrapknapsack_solver
-from problems_set.problem_set1 import problem_set1
-from problems_set.problem_set2 import problem_set2
-from problems_set.problem_set3 import problem_set3
-from problems_set.problem_set4 import problem_set4
-from problems_set.problem_set5 import problem_set5
-from problems_set.problem_set6 import problem_set6
+from problem_set1 import problem_set1
+from problem_set2 import problem_set2
+from problem_set3 import problem_set3
+from problem_set4 import problem_set4
+from problem_set5 import problem_set5
+from problem_set6 import problem_set6
 
 
 def main(values, weights, capacities):
@@ -18,16 +18,20 @@ def main(values, weights, capacities):
 
     packed_items = []
     packed_weights = []
+    packed_values = []
     total_weight = 0
     print('\tTotal value =', computed_value)
     for i in range(len(values)):
         if solver.BestSolutionContains(i):
             packed_items.append(i)
+            packed_values.append(values[i])
             packed_weights.append(weights[0][i])
             total_weight += weights[0][i]
     print('\tTotal weight:', total_weight)
-    # print('Packed items:', packed_items)
-    # print('Packed_weights:', packed_weights)
+    print('\tPacked items:', packed_items)
+    print('\tPacked_weights:', packed_weights)
+    print('\tPacked_values:', packed_values)
+    print('\n')
 
 def get_data(proposals):
     proposed_set = proposals.get("PROPOSAL")
