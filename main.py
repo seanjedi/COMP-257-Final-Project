@@ -19,7 +19,8 @@ VALID_CHOICES = ["1", "2", "3", "4", "q", ""]
 VALID_ALGORITHMS_BRUTE_FORCE = [problem_set10, problem_set15, problem_set20]
 VALID_ALGORITHMS_GREEDY = [problem_set10, problem_set15, problem_set20, problem_set25,
                            problem_set30, problem_set50, problem_set200, problem_set500, problem_set1000]
-VALID_ALGORITHMS_DP = [problem_set10]
+VALID_ALGORITHMS_DP = [problem_set10, problem_set15, problem_set20, problem_set25,
+                       problem_set30, problem_set50, problem_set200, problem_set500, problem_set1000]
 
 
 class Solution:

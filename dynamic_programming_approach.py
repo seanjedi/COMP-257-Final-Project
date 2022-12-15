@@ -1,29 +1,31 @@
 
 def dyanmic_programming_algorithm_approach(Proposals, Money):
-    return 2
+    # This is the dynamic programming algorithm approach
+    prop_length = len(Proposals)
+    m_array = [[0 for _ in range(Money + 1)] for _ in range(prop_length + 1)]
+    for i in range(prop_length+1):
+        proposal = Proposals[i-1]
+        for w in range(Money+1):
+            if i == 0 or w == 0:
+                m_array[i][w] = 0
+            elif w >= proposal["cost"]:
+                m_array[i][w] = max(m_array[i - 1][w], proposal["quality"] +
+                                    m_array[i - 1][w - proposal["cost"]])
+            else:
+                m_array[i][w] = m_array[i-1][w]
+    return m_array[prop_length][Money]
 
-
-# Subset-Sum(Proposals, Money)
-#     Array M[0 . . . len(proposals), 0 . . .Money]
-#     Initialize M[0, Money]= 0 for each w = 0, 1, . . . , W
-#     For i = 1, 2, . . . , len(proposals)
-#         For w = 0, . . . , Money
-#         If w < proposals[cost]:
-#             M(i, w) = M(i − 1, w).
-#         Else:
-#             M(i, w) = max(M(i − 1, w), proposals["quality"] + M(i − 1, w − proposals[cost"]))
-#         Endfor
-#     Endfor
-#     Return M[n, W]
-
-
-# function prob1Backtrack(DP, Q, F, budget)
-#     maxFundableSubset = []
-#     currBudget = budget
-#     for i in [n - 1, n - 2, ..., 0] do
-#         if DP[i, currBudget - F[i]] + Q[i] >= DP[i - 1, currBudget] then
-#             maxFundableSubset.append(i)
-#             currBudget -= F[i]
-#             end if
-#     end for
-#     return maxFundableSubset
+    # First Attempt, instead i should make it a 2-D array instead of a 1_D array
+    # prop_length = len(Proposals)
+    # m_array = [0 for _ in range((prop_length + 1) * (Money + 1))]
+    # for i in range(prop_length+1):
+    #     proposal = Proposals[i-1]
+    #     for w in range(Money+1):
+    #         if i == 0 or w == 0:
+    #             m_array[i*w] = 0
+    #         elif w > proposal["cost"]:
+    #             m_array[i*w] = max(m_array[(i - 1)*w], proposal["quality"] +
+    #                                m_array[(i - 1) * (w - proposal["cost"])])
+    #         else:
+    #             m_array[i*w] = m_array[(i-1)*w]
+    # return m_array[prop_length*Money]
