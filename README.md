@@ -7,22 +7,30 @@ Here I will be implementing the Knapsack Problem solutions using Brute Force, a 
 
 * [Question](Question)
   * [inputs and outputs](#inputs-and-outputs)
+  * [Data Creation](#data-creation)
 * [Brute Force Approach](#brute-force-approach)
   * [Approach](#approach)
   * [PseudoCode](#pseudocode)
   * [Big Oh Analysis](#big-oh-analysis)
+  * [Explanation of Missing Test Cases](#explanation-of-missing-test-cases)
 * [Greedy Approach](#greedy-approach)
   * [Approach](#approach-1)
   * [PseudoCode](#pseudocode-1)
   * [Big Oh Analysis](#big-oh-analysis-1)
+  * [Explanation of why greedy algorithm has a different solution](#explanation-of-why-greedy-algorithm-has-a-different-solution)
 * [Dynamic Programming Approach](#dynamic-programming-approach)
   * [Approach](#approach-2)
   * [PseudoCode](#pseudocode-2)
   * [Big Oh Analysis](#big-oh-analysis-2)
+* [Algorithm recommendation](#algorithm-recommendation)
+* [Output of the code](#output-of-the-code)
+* [References and Citations](#references-and-citations)
 
 ## Question
 
-We have a knapsack problem in which we want to optimize the quality ratings we have for a list of grants that are requesting X amount of funds. Given a certain amount of money, how would you find the subset of grants that maximize the sum of quality ratings while still being within budget. In this problem, quality can be a negative number.
+We have a knapsack problem in which we want to optimize the quality ratings we have for a list of grants that are requesting X amount of funds.
+Given a certain amount of money, how would you find the subset of grants that maximize the sum of quality ratings while still being within budget.
+In this problem, you would want to find what is the maximum quality that you can get from the grants that you were given.
 
 ### inputs and outputs
 
@@ -45,14 +53,69 @@ quality: The amount of quality a grant will provide (float)
 *Money*: Money available to fund grants (Money >=0 )
 
 **Outputs**
-*OSubset*: Subset of grants that maximize the quality rating
-*OQuality*: Optimal quality score obtained
+*OutputSubset*: Subset of grants that maximize the quality rating
+*OutputQuality*: Optimal quality score obtained
+In the final implementation, only the OutputQuality was returned, however it wouldn't require much more work to find the OutputSubset if needed.
 
+### Data Creation
+
+I have utilized the 0-1Knapsack Dataset generator `generatorExecutable` from the Github Repository of JorikJooken to create 6 different knapsack sets.
+This Github repository contains several datasets for the knapsack problem, as well as a knapsack problem dataset generator that I had utilized for my project. I have used this generator alongside the knapsack solver tool from Google mentioned below to create the datasets and answer sheet that I had used for this project.
+
+The 6 problem sets that I have created are as follows:
+
+``` psuedocode
+Set 1
+n = 10
+W = 100
+
+Set 2
+n = 25
+W = 200
+
+Set 3
+n = 100
+W = 1000
+
+Set 4
+n = 200
+W = 1500
+
+Set 5
+n = 500
+W = 2000
+
+Set 6
+n = 1000
+W = 3000
+
+Set 7
+n = 15
+W = 150
+
+Set 8
+n = 20
+W = 200
+
+Set 9
+n = 30
+W = 300
+```
+
+The way to use the generator is as follows:
+
+``` bash
+./generatorExecutable < problem_generator_X.txt > problem_setN.txt
+```
+
+I have also utilized the knapsack solver created by Google as part of the Optimization packaged called `ortools` to produce the optimal results of the problem sets. This tool was able to take the dictionary I had created above for each dataset, and find the optimal solutions to each.
+
+I have stored the generated datasets under the problems_set directory here: [Problems Set](./problems_set)
 ## Brute Force Approach
 
 ### Approach
 
-The brute force approach to this problem would be one in which you iterate through each grant, and create a list of each permutation of subroups of grants. Afterwards, you would go through each permutation, and check which subgroup would give you the highest quality rating without going over the available money(M).
+The brute force approach to this problem would be one in which you iterate through each grant, and create a list of each permutation of subgroups of grants. Afterwards, you would go through each permutation, and check which subgroup would give you the highest quality rating without going over the available money(M).
 
 #### PseudoCode
 
@@ -61,6 +124,7 @@ def money_brute_force_solution(Proposals, Money):
   subsets = []
   OQuality = 0
   OSubset = []
+  # Get the powerset of the proposals
   if len(Proposals) == 0:
     return OSubset, Quality
   elif len(proposals) == 1:
@@ -99,9 +163,12 @@ This solution would be O(2<sup>N</sup>) + O(2<sup>N</sup>), where N is len(propo
 So in this example, the Big-Oh of the solution would be O(2 \* 2<sup>N</sup>) since 2 is a constant, we can get rid of it.
 Answer: O(2<sup>N</sup>)
 
-### Limitations
+From running the algorithm, we have seen the Brute Force Algorithm has a runtime curve that looks like this. It drops off immediately after the third problem to 0:
+![Brute Force Algorithm Runtime](./algorithm_results/time_results_of_brute_force_algorithm.jpg)
 
-This might take up too much memory and/or time, so when I test this, that might become an issue.
+### Explanation of Missing Test Cases
+
+This approach takes up a large amount of memory, so when I test this, that became an issue, in which my computer would run out of system memory and cause the program to crash. I had setup 3 test cases for this algorithm to run on, but otherwise it was not able to run for the other datasets as it would crash with and O(2<sup>N</sup>) memory increase each time.
 
 ## Greedy Approach
 
@@ -116,7 +183,7 @@ The reason I propose this approach, is if we have multiple grants with the same 
 
 ``` python
 def money_greedy_solution(Proposals, Money):
-  # In the final code, I will implement this by utilizing two mergesorts, hence this would be O(2logN)
+  # First I will be sorting the algorithm by both quality then cost. This if optmized should take around O(2logN) time
   Proposals = sorted(sorted(Proposals, key = lambda x : x["cost"]), key = lambda x : x["quality"], reverse = True)
   i = 0
   OQuality = 0
@@ -141,9 +208,14 @@ This algorithm would take O(NlogN) time, where N is len(proposals)
   
 Since O(NlogN) is the leading term (O(NlogN) >= O(N)), that is the time for this algorithm
 
-### Limitations
+From running the algorithm, we have seen the Greedy Algorithm has a runtime curve that looks like this:
+![Greedy Algorithm Runtime](./algorithm_results/time_results_of_greedy_algorithm.jpg)
 
-This might not show optimal solutions all the time. Lets say we have the following when we only have 100 dollars [(100,100), (50,75), (50,75)]. In this case, the greedy approach would only take the first option, while the most optimal would be the two 75 options, so this would not be ideal.
+### Explanation of why greedy algorithm has a different solution
+
+Albeit this approach is really fast, this approach does not show the optimal solutions all the time. The reason for that, is that the greedy approach takes the grants with the highest quality alongside the lowest costs first, and if there exists a grant with the maximum cost with also the highest quality, then that would be taken first.
+For example, let's say we have the following when we only have `100` dollars: ```[("cost":100,"quality":100), ("cost":50,"quality":75), ("cost":50,"quality":75)]```. 
+In this case, the greedy approach would only take the first option, while the most optimal solution would be to take the two 75 quality options, so this would not be the optimal solution.
 
 ## Dynamic Programming Approach
 
@@ -164,29 +236,29 @@ Otherwise OPT(i, w) = max(OPT(i − 1, w), vi + OPT(i − 1, w − wi)).
 
 ``` pseudocode
 Subset-Sum(Proposals, Money)
-  Array M[0 . . . len(proposals), 0 . . .Money]
+  Array M[0 . . . len(proposals)][ 0 . . .Money]
   Initialize M[0, Money]= 0 for each w = 0, 1, . . . , W
   For i = 1, 2, . . . , len(proposals)
     For w = 0, . . . , Money
       If w < proposals[cost]:
-        M(i, w) = M(i − 1, w). 
+        M[i][w] = M(i − 1, w). 
       Else:
-        M(i, w) = max(M(i − 1, w), proposals["quality"] + M(i − 1, w − proposals[cost"]))
+        M[i][w] = max(M[i − 1][w], proposals["quality"] + M[i − 1][w − proposals[cost"]])
     Endfor
   Endfor
   Return M[n, W]
 ```
 
-From Book
+This was adjusted from the algorithm found within the book.
 
-From here 
+As for finding the optimal subset, we would need to use this algorithm below to backtrack through our solution.
 
 ``` pseudocode
-function prob1Backtrack(DP, Q, F, budget)
+function prob1Backtrack(DP, Proposals, Money)
     maxFundableSubset = []
     currBudget = budget
-    for i in [n - 1, n - 2, ..., 0] do
-        if DP[i, currBudget - F[i]] + Q[i] >= DP[i - 1, currBudget] then
+    for i in len(Proposals) do
+        if DP[i][currBudget - Proposals[i]["cost"]] + Proposal[i]["qualoty"] >= DP[i - 1][currBudget] then
             maxFundableSubset.append(i)
             currBudget -= F[i]
             end if
@@ -196,62 +268,52 @@ function prob1Backtrack(DP, Q, F, budget)
 
 ### Big Oh Analysis
 
-The Big-Oh for this approach is O(Money\*N), where N is len(proposals) and M being the amount of Money we have
-The reason of this Big Oh is because we are going from the length of the list compared to the all capacity amounts of money we have. 
+The Big-Oh for this approach is O(Money\*N), where N is len(proposals).
+The reason of this Big Oh is because we are going from the length of the list compared to the all capacity amounts of money we have.
 Since we are comparing these two values in two separate for-loops, we have O(Money)\*O(N).
-~~ Since N can be a constant C (IE N could be 50, 100, etc), we must write this as O(C\*N). So a shortened version of this Big-Oh is: O(N) ~~
-Since N is not a constant, being that we can change N to any number we want (similar to M) we can have situations where C > M, C = M, and C < M. Since we can't definitely say what N is and it's not a constant, we can not rule it out. So the final BIg-Oh for this approach is O(N\*Money)
+Since N is not a constant, being that we can change N to any number we want (similar to M) we can have situations where C > M, C = M, and C < M. Since we can't definitely say what N is and it's not a constant, we can not rule it out. So the final BIg-Oh for this approach is O(N\*Money). If we also include the backtracking we need to do to find the optimal set, it would incur an additional O(N) time, so the full complexity is O(N) + O(N\*Money), and since O(N\*Money) > O(N), we can simplify it as O(N\*Money) time overall.
 Answer: O(N\*Money)
 
-### Limitations
+From running the algorithm, we have seen that the dynamic programming a runtime curve that looks like this:
+![Dynamic Programming Algorithm Runtime](./algorithm_results/time_results_of_dynamic_programming_approach.jpg)
 
-This approach seems to utilize a lot of space since it is a 2-D array solution. There might be better solutions out there.
+### Limitations of this Dynamic Programming Approach
+
+This approach seems to utilize a lot of space since it is a 2-D array solution. There are better space optimized solutions for this problem.
 
 Update:
 Checking the knapsack algorithm online, the website GeeksForGeeks has a few alternative solutions available in which Time complexity is still O(Money \*N), but the space complexity is down to O(2\*Money)
 
-### Citations
-I have utilized the 0-1Knapsack Dataset creator `generatorExecutable` from the Github Repository of JorikJooken to create 6 different knapsack sets. This Github repository contains several 
+## Algorithm recommendation
 
-Reference.[KnapSack Problem Instances Github page](https://github.com/JorikJooken/knapsackProblemInstances)
+From the 3 algorithms that we have tested here, I would recommend that we use the Dynamic Programming approach. Albeit it is slower and takes up more memory than the Greedy Algorithm approach, as we can see in our analysis and graph below, I would still recommend it more since it finds the most optimal solution to this problem. For the Greedy algorithm, it is great at finding a quick approximation of what the optimal solution could be, but since it is inaccurate and gives us the wrong results from time, i would not recommend this approach if the most optimal solution is necessary. 
+Also another caveat of the Dynamic Programming approach, is that depending on the amount of money that we receive, the runtime could be faster than the Greedy Algorithm approach, as it would at the very least take O(N) time if money was 1, and the Greedy approach would still take O(NlogN) time, which is more than O(N)
+So overall, even though the greedy approach takes O(NlogN) and Dynamic Programming takes O(N\*Money) and O(2\*Money) memory (where Money could be a very large number), I would take the Dynamic programming approach since it always bring back the most optimal solution.
 
-The 6 problem sets that I have created are as follows:
+As for the brute force approach, since it takes up the most amount of memory and time, enough to the point that even on a robust computer such as my own that it cannot run it.
+I would definitely not recommend this approach, and would even recommend Brute force over this one, because the Brute Force approach can at least complete a calculation, albeit inaccurate.
 
-Set 1
-n = 10
-W = 100
+Short Answer: Dynamic Programming Approach
 
-Set 2
-n = 25
-W = 200
+![All Algorithms Runtime](./algorithm_results/time_results_of_all_algorithms.jpg)
 
-Set 3
-n = 100
-W = 1000
+## Output of the code
 
-Set 4
-n = 200
-W = 1500
+To run the code that I have provided, all you would need to do is first download the dependencies listed in `requirements.txt` by using Pip (IE `pip install -r requirements.txt`). 
+After having the dependencies downloaded, you can run the main file main.py, and from there you can choose to run either the brute force algorithm, the greedy algorithm, the dynamic programming algorithm, or all 4, and how many tests you want to run with each for each dataset.
 
-Set 5
-n = 500
-W = 2000
+From the tests I have ran, I had stored the results of those tests within here: [All Algorithms Results Stored Here](./algorithm_results)
 
-Set 6
-n = 1000
-W = 3000
-
-The way to use the generator is as follows:
-
-``` bash
-./generatorExecutable < problem_generator.txt > output.txt
-```
-
-I have also utilized the knapsack solver created by Google as part of the Optimization packaged called `ortools` to produce the optimal results of the problem sets
-Reference: [Knapsack Optimized Solution](https://developers.google.com/optimization/bin/knapsack)
+Here is the output of the results of all the algorithms I have ran:
+[All Algorithms Results](./algorithm_results/all_algorithms_output.txt)
 
 
-### Reference
+## References and Citations
+
 Jooken, J., Leyman, P., & De Causmaecker, P. (2022). A new class of hard problem instances for the 0–1 knapsack
 problem. European Journal of Operational Research, 301, 841–854. 
 Dataset Available Online: https://github.com/JorikJooken/knapsackProblemInstances 
+
+Links:
+Dataset Generator Reference.[KnapSack Problem Instances Github page](https://github.com/JorikJooken/knapsackProblemInstances)
+Google Optimization Tools Reference: [Knapsack Optimized Solution](https://developers.google.com/optimization/bin/knapsack)

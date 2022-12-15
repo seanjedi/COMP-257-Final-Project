@@ -1,10 +1,11 @@
 import time
-import pandas as pd
-import matplotlib.pyplot as plt
 
-from greedy_algorithm_approach import money_greedy_solution
+import matplotlib.pyplot as plt
+import pandas as pd
+
 from brute_force_approach import money_brute_force_solution
 from dynamic_programming_approach import dyanmic_programming_algorithm_approach
+from greedy_algorithm_approach import money_greedy_solution
 from problems_set.problem_set10 import problem_set10
 from problems_set.problem_set15 import problem_set15
 from problems_set.problem_set20 import problem_set20
@@ -175,7 +176,7 @@ class Solution:
         # Providing x and y label to the chart
         plt.xlabel('set size (n)')
         plt.ylabel('time (sec)')
-        plt.savefig(f"time_results_of_algorithms{self.set_count}.jpg")
+        plt.savefig("time_results_of_algorithms.jpg")
 
 
 def main():

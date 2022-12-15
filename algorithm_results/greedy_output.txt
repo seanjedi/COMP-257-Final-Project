@@ -3,142 +3,169 @@ Getting Results for: problem_set10
     The available money is:100
     The Optimal Quality is:128
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:127
-		--- 1.5974044799804688e-05 seconds ---
+		--- 0.00020766258239746094 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:127
-		--- 5.0067901611328125e-06 seconds ---
+		--- 3.24249267578125e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:127
-		--- 3.5762786865234375e-06 seconds ---
+		--- 5.888938903808594e-05 seconds ---
 
 Getting Results for: problem_set15
     The size of the sample is: 15
     The available money is:150
     The Optimal Quality is:169
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:169
-		--- 6.67572021484375e-06 seconds ---
+		--- 3.314018249511719e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:169
-		--- 4.5299530029296875e-06 seconds ---
+		--- 2.5987625122070312e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:169
-		--- 4.5299530029296875e-06 seconds ---
+		--- 2.574920654296875e-05 seconds ---
 
 Getting Results for: problem_set20
     The size of the sample is: 20
     The available money is:200
     The Optimal Quality is:246
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:244
-		--- 7.3909759521484375e-06 seconds ---
+		--- 2.956390380859375e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:244
-		--- 5.9604644775390625e-06 seconds ---
+		--- 2.5272369384765625e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:244
-		--- 5.7220458984375e-06 seconds ---
+		--- 2.5033950805664062e-05 seconds ---
 
 Getting Results for: problem_set25
     The size of the sample is: 25
     The available money is:200
     The Optimal Quality is:216
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:211
-		--- 8.344650268554688e-06 seconds ---
+		--- 2.956390380859375e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:211
-		--- 6.67572021484375e-06 seconds ---
+		--- 2.7179718017578125e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:211
-		--- 6.4373016357421875e-06 seconds ---
+		--- 2.6702880859375e-05 seconds ---
 
 Getting Results for: problem_set30
     The size of the sample is: 30
     The available money is:300
     The Optimal Quality is:331
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:331
-		--- 9.5367431640625e-06 seconds ---
+		--- 3.3855438232421875e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:331
-		--- 8.106231689453125e-06 seconds ---
+		--- 2.6702880859375e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:331
-		--- 8.106231689453125e-06 seconds ---
+		--- 2.574920654296875e-05 seconds ---
 
 Getting Results for: problem_set50
     The size of the sample is: 100
     The available money is:1000
     The Optimal Quality is:977
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:976
-		--- 3.147125244140625e-05 seconds ---
+		--- 6.008148193359375e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:976
-		--- 3.0040740966796875e-05 seconds ---
+		--- 5.1021575927734375e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  113.984375
 		The Output Quality is:976
-		--- 2.7179718017578125e-05 seconds ---
+		--- 4.38690185546875e-05 seconds ---
 
 Getting Results for: problem_set200
     The size of the sample is: 200
     The available money is:1500
     The Optimal Quality is:1704
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.2109375
 		The Output Quality is:1701
-		--- 6.318092346191406e-05 seconds ---
+		--- 8.511543273925781e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.2109375
 		The Output Quality is:1701
-		--- 5.173683166503906e-05 seconds ---
+		--- 8.392333984375e-05 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.2109375
 		The Output Quality is:1701
-		--- 4.9591064453125e-05 seconds ---
+		--- 7.534027099609375e-05 seconds ---
 
 Getting Results for: problem_set500
     The size of the sample is: 500
     The available money is:2000
     The Optimal Quality is:2820
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.2109375
 		The Output Quality is:2648
-		--- 0.00015115737915039062 seconds ---
+		--- 0.0001876354217529297 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.2109375
 		The Output Quality is:2648
-		--- 0.00013399124145507812 seconds ---
+		--- 0.0001690387725830078 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.2109375
 		The Output Quality is:2648
-		--- 0.0001289844512939453 seconds ---
+		--- 0.000156402587890625 seconds ---
 
 Getting Results for: problem_set1000
     The size of the sample is: 1000
     The available money is:2000
     The Optimal Quality is:3504
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.46875
 		The Output Quality is:2435
-		--- 0.00028014183044433594 seconds ---
+		--- 0.00031828880310058594 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.46875
 		The Output Quality is:2435
-		--- 0.0002589225769042969 seconds ---
+		--- 0.0002925395965576172 seconds ---
 
 	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.46875
 		The Output Quality is:2435
-		--- 0.00025200843811035156 seconds ---
+		--- 0.0002841949462890625 seconds ---
 

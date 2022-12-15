@@ -1,0 +1,154 @@
+Which Algorithm Do you want to use (default: 4)?
+1) Brute Force Algorithm
+2) Greedy Algorithm
+3) Dynamic Programming Algorithm
+4) All Three
+q) Quit out of the program
+Choice: How many runs do you want (default: 1)?
+Choice: Getting Results for: problem_set10
+    The size of the sample is: 10
+    The available money is:100
+    The Optimal Quality is:128
+	Taking the time of: money_brute_force_solution
+		This is how much MiB Brute Force is taking:  114.0546875
+		The Output Quality is:128
+		--- 0.0006711483001708984 seconds ---
+
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  114.0546875
+		The Output Quality is:127
+		--- 4.220008850097656e-05 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  114.0546875
+		The Output Quality is:128
+		--- 0.00022649765014648438 seconds ---
+
+Getting Results for: problem_set15
+    The size of the sample is: 15
+    The available money is:150
+    The Optimal Quality is:169
+	Taking the time of: money_brute_force_solution
+		This is how much MiB Brute Force is taking:  117.390625
+		The Output Quality is:169
+		--- 0.04507112503051758 seconds ---
+
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  117.390625
+		The Output Quality is:169
+		--- 7.987022399902344e-05 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  117.390625
+		The Output Quality is:169
+		--- 0.000453948974609375 seconds ---
+
+Getting Results for: problem_set20
+    The size of the sample is: 20
+    The available money is:200
+    The Optimal Quality is:246
+	Taking the time of: money_brute_force_solution
+		This is how much MiB Brute Force is taking:  249.171875
+		The Output Quality is:246
+		--- 1.2504174709320068 seconds ---
+
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  121.91796875
+		The Output Quality is:244
+		--- 0.00014662742614746094 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  121.91796875
+		The Output Quality is:246
+		--- 0.0007383823394775391 seconds ---
+
+Getting Results for: problem_set25
+    The size of the sample is: 25
+    The available money is:200
+    The Optimal Quality is:216
+		Brute Force did not run for this problem set
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  121.91796875
+		The Output Quality is:211
+		--- 3.218650817871094e-05 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  121.91796875
+		The Output Quality is:216
+		--- 0.0008885860443115234 seconds ---
+
+Getting Results for: problem_set30
+    The size of the sample is: 30
+    The available money is:300
+    The Optimal Quality is:331
+		Brute Force did not run for this problem set
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  121.91796875
+		The Output Quality is:331
+		--- 3.0517578125e-05 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  121.91796875
+		The Output Quality is:331
+		--- 0.0016295909881591797 seconds ---
+
+Getting Results for: problem_set50
+    The size of the sample is: 100
+    The available money is:1000
+    The Optimal Quality is:977
+		Brute Force did not run for this problem set
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  121.91796875
+		The Output Quality is:976
+		--- 5.340576171875e-05 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  121.91796875
+		The Output Quality is:977
+		--- 0.019143104553222656 seconds ---
+
+Getting Results for: problem_set200
+    The size of the sample is: 200
+    The available money is:1500
+    The Optimal Quality is:1704
+		Brute Force did not run for this problem set
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  121.91796875
+		The Output Quality is:1701
+		--- 0.00010371208190917969 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  123.71875
+		The Output Quality is:1704
+		--- 0.058310508728027344 seconds ---
+
+Getting Results for: problem_set500
+    The size of the sample is: 500
+    The available money is:2000
+    The Optimal Quality is:2820
+		Brute Force did not run for this problem set
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  123.71875
+		The Output Quality is:2648
+		--- 0.0001780986785888672 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  133.0
+		The Output Quality is:2820
+		--- 0.19993948936462402 seconds ---
+
+Getting Results for: problem_set1000
+    The size of the sample is: 1000
+    The available money is:2000
+    The Optimal Quality is:3504
+		Brute Force did not run for this problem set
+	Taking the time of: money_greedy_solution
+		This is how much MiB Brute Force is taking:  129.1015625
+		The Output Quality is:2435
+		--- 0.0003249645233154297 seconds ---
+
+	Taking the time of: dyanmic_programming_algorithm_approach
+		This is how much MiB Dynamic Programming Approach is taking:  147.14453125
+		The Output Quality is:3504
+		--- 0.37551045417785645 seconds ---
+

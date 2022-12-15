@@ -1,3 +1,7 @@
+import os
+
+import psutil
+
 
 def money_greedy_solution(proposals, Money):
     # In the final code, I will implement this by utilizing two mergesorts, hence this would be O(2logN)
@@ -12,5 +16,6 @@ def money_greedy_solution(proposals, Money):
             output_subset.append(proposals[i])
             Money -= proposals[i]["cost"]
         i += 1
-    # return output_subset, output_quality
+    print("\t\tThis is how much MiB Brute Force is taking: ",
+          psutil.Process(os.getpid()).memory_info().rss / 1024 ** 2)
     return output_quality
